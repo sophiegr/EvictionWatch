@@ -184,7 +184,7 @@
   <div class="context">
     <h2>Context</h2>
       <figure>
-        <img src="./src/lib/image/Graph_4.png" alt="" />
+        <img src="/src/lib/image/Graph_4.png" alt="" />
       </figure>
       <p>Since 2004, corporate ownership rates in Boston have skyrocketed. In every single neighborhood, there was at least a 10% increase in corporate ownership rate. 
         Some neighborhoods, like the Fenway and the South Boston Waterfront, experienced over a 25% increase. </p>
