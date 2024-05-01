@@ -70,11 +70,11 @@
       
       map.addSource("corporate_ownership", {
         type: "geojson",
-        data: "src/data/CorpOwner.geojson",
+        data: "src/lib/data/CorpOwner.geojson",
       });
       map.addSource("owner_occupancy", {
         type: "geojson",
-        data: "src/data/OwnerOccupancy.geojson",
+        data: "src/lib/data/OwnerOccupancy.geojson",
       });
   
       updateMapLayer(timeFilter, "corporate_ownership", corpowner_paint);
@@ -184,17 +184,17 @@
   <div class="context">
     <h2>Context</h2>
       <figure>
-        <img src="src/image/Graph_4.png" alt="" />
+        <img src="src/lib/image/Graph_4.png" alt="" />
       </figure>
       <p>Since 2004, corporate ownership rates in Boston have skyrocketed. In every single neighborhood, there was at least a 10% increase in corporate ownership rate. 
         Some neighborhoods, like the Fenway and the South Boston Waterfront, experienced over a 25% increase. </p>
         <figure>
-          <img src="src/image/Graph_5.png" alt="" />
+          <img src="src/lib/image/Graph_5.png" alt="" />
         </figure>
         <p>In this same timeframe, the majority of Boston neighborhoods have experienced a decrease in owner-occupancy rates. The impact of this, in combination with the rise in 
           corporate ownership rates, is evident when we take a look at how eviction rates have changed in these neighborhoods.  </p>
         <figure>
-          <img src="src/image/Graph_6.png" alt="" />
+          <img src="src/lib/image/Graph_6.png" alt="" />
         </figure>
         <p>Eviction rates in Dorchester and Roxbury, both of which have high percentages of Black and Hispanic residents, have increased sharply since the Covid-19 pandemic. 
           We must keep in mind that each of these neighborhoods had nearly a 20% increase in corporate ownership rates since 2004. </p>
