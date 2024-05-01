@@ -70,11 +70,11 @@
       
       map.addSource("corporate_ownership", {
         type: "geojson",
-        data: "/data/CorpOwner.geojson",
+        data: "data/CorpOwner.geojson",
       });
       map.addSource("owner_occupancy", {
         type: "geojson",
-        data: "/data/OwnerOccupancy.geojson",
+        data: "data/OwnerOccupancy.geojson",
       });
   
       updateMapLayer(timeFilter, "corporate_ownership", corpowner_paint);
