@@ -4,6 +4,7 @@
     import mapboxgl from "mapbox-gl";
     import "../../node_modules/mapbox-gl/dist/mapbox-gl.css";
     import Switch from "./Switch.svelte";
+    import Bargraphs from "./Bargraph_corp.svelte";
     let map;
     let toggle;
     let timeFilter = 2005;
@@ -163,6 +164,7 @@
       closeOnClick: true,
     });
     $: console.log(toggle);
+
   </script>
   
   <!-- <body> -->
@@ -183,9 +185,10 @@
   </div>
   <div class="context">
     <h2>Context</h2>
-      <figure>
-        <img src="image/Graph_4.png" alt="" />
-      </figure>
+    <div class='graph_1'>
+      <h3>Change in Corporate Ownership Rates per Neighborhood from 2004-2023</h3>
+      <Bargraphs/>
+    </div>
       <p>Since 2004, corporate ownership rates in Boston have skyrocketed. In every single neighborhood, there was at least a 10% increase in corporate ownership rate. 
         Some neighborhoods, like the Fenway and the South Boston Waterfront, experienced over a 25% increase. </p>
         <figure>
@@ -232,12 +235,14 @@
       display: grid;
       grid-template-columns: 4fr 1fr;
       
-      figure {
+      .graph_1 {
         grid-column: 1;
         padding-bottom: 5%;
       }
       p {
         grid-column: 2;
+        display: grid;
+        align-items: center
       }
     }
   </style>
