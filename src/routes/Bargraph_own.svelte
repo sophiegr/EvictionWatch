@@ -91,7 +91,6 @@
         .attr("height", y.bandwidth())
         .attr("x", d => x(Math.min(0, d.own_occ_rate_diff)))
         .attr("width", d => Math.abs(x(d.own_occ_rate_diff) - x(0)))
-    
     })
 
 </script>
@@ -103,6 +102,9 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
     /* Add your CSS styles here */
+    :global(body) {
+        font-family: "Noto Sans", sans-serif;
+    }
     :global(.bar2) {
         fill: rgb(128, 63, 128);
     }
@@ -111,21 +113,21 @@
         fill: steelblue;
     }
 
-    :global(.axis-x2, .axis-y2) {
+    :global(.axis-x-2, .axis-y-2) {
         font-family: "Noto Sans", sans-serif;
         font-size: 14px;
     }
 
-    :global(.axis-x2 text, .axis-y2 text) {
+    :global(.axis-x-2 text, .axis-y-2 text) {
         font-family: "Noto Sans", sans-serif;
         fill: black;
     }
 
-    :global(.axis-x2 line, .axis-y2 line) {
+    :global(.axis-x-2 line, .axis-y-2 line) {
         stroke: #ccc;
     }
 
-    :global(.axis-x2 path, .axis-y2 path) {
+    :global(.axis-x-2 path, .axis-y-2 path) {
         display: none;
     }
 </style>
