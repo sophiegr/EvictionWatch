@@ -4,7 +4,8 @@
     import mapboxgl from "mapbox-gl";
     import "../../node_modules/mapbox-gl/dist/mapbox-gl.css";
     import Switch from "./Switch.svelte";
-    import Bargraphs from "./Bargraph_corp.svelte";
+    import Bargraphs_corp from "./Bargraph_corp.svelte";
+    import Bargraphs_own from "./Bargraph_own.svelte";
     let map;
     let toggle;
     let timeFilter = 2005;
@@ -185,15 +186,16 @@
   </div>
   <div class="context">
     <h2>Context</h2>
-    <div class='graph_1'>
+    <div class='graph'>
       <h3>Change in Corporate Ownership Rates per Neighborhood from 2004-2023</h3>
-      <Bargraphs/>
+      <Bargraphs_corp/>
     </div>
       <p>Since 2004, corporate ownership rates in Boston have skyrocketed. In every single neighborhood, there was at least a 10% increase in corporate ownership rate. 
         Some neighborhoods, like the Fenway and the South Boston Waterfront, experienced over a 25% increase. </p>
-        <figure>
-          <img src="image/Graph_5.png" alt="" />
-        </figure>
+    <div class='graph'>
+      <h3>Change in Owner Occupancy Rates per Neighborhood from 2004-2023</h3>
+      <Bargraphs_own/>
+    </div>
         <p>In this same timeframe, the majority of Boston neighborhoods have experienced a decrease in owner-occupancy rates. The impact of this, in combination with the rise in 
           corporate ownership rates, is evident when we take a look at how eviction rates have changed in these neighborhoods.  </p>
         <figure>
@@ -235,7 +237,7 @@
       display: grid;
       grid-template-columns: 4fr 1fr;
       
-      .graph_1 {
+      .graph{
         grid-column: 1;
         padding-bottom: 5%;
       }
