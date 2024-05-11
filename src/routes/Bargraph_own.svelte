@@ -91,6 +91,22 @@
         .attr("height", y.bandwidth())
         .attr("x", d => x(Math.min(0, d.own_occ_rate_diff)))
         .attr("width", d => Math.abs(x(d.own_occ_rate_diff) - x(0)))
+        .on("mouseover", function (event, d) {
+                tooltip.style("opacity", 1)
+                    .html(`Value: ${d.own_occ_rate_diff}`)
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px");
+            })
+        .on("mouseout", function () {
+            tooltip.style("opacity", 0);
+        });
+    
+    // Tooltip
+    const tooltip = d3.select("#my_dataviz2")
+            .append("div")
+            .style("opacity", 0)
+            .attr("class", "tooltip");
+
     })
 
 </script>
@@ -129,5 +145,16 @@
 
     :global(.axis-x-2 path, .axis-y-2 path) {
         display: none;
+    }
+
+    :global(.tooltip) {
+        position: absolute;
+        text-align: center;
+        padding: 5px;
+        font: 12px sans-serif;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        pointer-events: none;
+        opacity: 0;
     }
 </style>

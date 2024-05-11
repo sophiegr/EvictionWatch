@@ -88,8 +88,23 @@
             .attr("x", 0)
             .attr("y", d => y(d.neighborhood))
             .attr("width", d => x(d.corp_own_rate_diff))
-            .attr("height", y.bandwidth());
+            .attr("height", y.bandwidth())
+            .on("mouseover", function (event, d) {
+                tooltip.style("opacity", 1)
+                    .html(`Value: ${d.corp_own_rate_diff}`)
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px");
+            })
+            .on("mouseout", function () {
+                tooltip.style("opacity", 0);
+            });
 
+
+    // Tooltip
+    const tooltip = d3.select("#my_dataviz2")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip");
 
     })
 
@@ -126,5 +141,16 @@
 
     :global(.axis-x path, .axis-y path) {
         display: none;
+    }
+    
+    :global(.tooltip) {
+        position: absolute;
+        text-align: center;
+        padding: 5px;
+        font: 12px sans-serif;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        pointer-events: none;
+        opacity: 0;
     }
 </style>
